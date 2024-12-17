@@ -1,0 +1,97 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+html {
+  width: 100%;
+  height: 100%;
+  scrollbar-color: #C7C7C7 #FBFBFB;
+  scrollbar-width: thin;
+}
+body {
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  color: #333333;
+  background-color: #141414;
+
+}
+ol, ul, li {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  color: #333333;
+  text-decoration: none;
+}
+img {
+  vertical-align: top;
+}
+
+img, fieldset, iframe {
+  border: 0 none;
+}
+
+input, textarea {
+  &:focus {
+    border-color: #353535;
+    outline-color: #353535;
+  }
+}
+
+input {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+/** placeholder reset code **/
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #D6D6D6;
+  opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #D6D6D6;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #D6D6D6;
+}
+/****************************/

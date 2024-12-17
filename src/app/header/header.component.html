@@ -1,0 +1,50 @@
+<div class="TopBar">
+    <div class="nfIcon">
+        Netflix
+    </div>
+    <div class="Menus">
+        <div class="MenuSmaller" (mouseenter)="ClickMenu()" (mouseleave)="ClickMenu()">
+            메뉴
+            <ng-container *ngIf="menu">
+                <div class="menuOpen">
+                    <button class="MenuSmaller">
+                        홈
+                    </button>
+                    <button class="MenuSmaller">
+                        시리즈
+                    </button>
+                    <button class="MenuSmaller">
+                        영화
+                    </button>
+                    <button class="MenuSmaller">
+                        NEW! 요즘 대세 콘텐츠
+                    </button>
+                    <button class="MenuSmaller">
+                        내가 찜한 콘텐츠
+                    </button>
+                    <button class="MenuSmaller">
+                        언어별로 찾아보기
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+        <button class="MenuButtons">
+            홈
+        </button>
+        <button class="MenuButtons">
+            시리즈
+        </button>
+        <button class="MenuButtons">
+            영화
+        </button>
+        <button class="MenuButtons">
+            NEW! 요즘 대세 콘텐츠
+        </button>
+        <button class="MenuButtons">
+            내가 찜한 콘텐츠
+        </button>
+        <button class="MenuButtons">
+            언어별로 찾아보기
+        </button>
+    </div>
+</div>

@@ -1,0 +1,229 @@
+<div class="Main">
+    <div [ngClass]="{'black':videoinfo}" (click)="closeinfo()"></div>
+    <div [ngClass]="{'black':movie1}" (click)="CloseMovie1()"></div>
+    <div [ngClass]="{'black':MakeitBigger}" (click)="MakeBig()"></div>
+    
+    <!-- 인터스텔라 영화 정보 -->
+
+    <div [ngClass]="{'all':videoinfo}">
+        <div class="hidden" [ngClass]="{'VideoInfo':videoinfo}">
+            <div class="MovieImg">
+                <img src="../../assets/images/R.jpeg" alt="" class="imgInfo">
+            </div>
+            <div class="gradient-overlay"></div>
+            <div class="TitleInfo">
+                InterStellar
+            </div>
+            <div class="infoButtons">
+                <div class="playButton">
+                    재생
+                </div>
+            </div>
+            <div class="text">
+                <div style="display: flex">
+                    <div class="match">
+                        90% 일치
+                    </div>
+                    <div class="year"> 
+                        2019 2시간 49분
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="information">
+                        세계 각국의 정부와 경제가 완전히 붕괴된 미래가 다가온다. 지난 20세기에 범한 잘못이 전 세계적인 식량 부족을 불러왔고,
+                        NASA도 해체되었다. 이때 시공간에 불가사의한 틈이 열리고, 남은 자들에게는 이 곳을 탐험해 인류를 구해야 하는 임무가 
+                        지워진다.사랑하는 가족들을 뒤로 한 채 인류라는 더 큰 가족을 위해, 그들은 이제 희망을 찾아 우주로 간다. 
+                        그리고 우린 답을 찾을 것이다. 늘 그랬듯이… 
+                    </div>
+                    <div class="starring">
+                        출연: 
+                    </div>
+                </div>
+            </div>
+            <button class="closeButton" (click)="closeinfo()">
+                X
+            </button>
+        </div>
+    </div>
+
+        <!-- 넷플릭스 인기 콘텐츠 -->
+
+        <div [ngClass]="{'all':MakeitBigger}">
+            <div class="hidden" [ngClass]="{'BiggerMenu':MakeitBigger}">
+                <div class="MenuTitle">
+                    넷플릭스 인기 콘텐츠
+                </div>
+                <button class="closeButton" (click)="MakeBig()">
+                    X
+                </button>
+            </div>
+        </div>
+
+        <!-- 기생충 영화정보 -->
+
+    <ng-container *ngIf="movie1">
+        <div class="all">
+            <div class="VideoInfo">
+                <div class="MovieImg">
+                    <img src="../../assets/images/a56f93cdfca9cb579f622222e330de33.jpg" alt="" class="imgInfo">
+                </div>
+                <div class="TitleInfo2">
+                    PARASITE
+                </div>
+                <div class="gradient-overlay2"></div>
+
+                <div class="infoButtons">
+                    <div class="playButton">
+                        재생
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="match">
+                        90% 일치
+                    </div>
+                </div>
+                <button class="closeButton" (click)="CloseMovie1()">
+                    X
+                </button>
+            </div>
+        </div>
+    </ng-container>
+
+    <!-- 메인화면 -->
+
+        <div class="Recommend">
+            <img src="../../assets/images/R (1).jpeg" alt="" class="imgMain">
+            <div class="gradient-overlay"></div>
+            <div class="MovieTitle">
+                InterStellar 
+            </div>
+            <div class="introduce">
+                세계 각국의 정부와 경제가 완전히 붕괴된 미래가 다가온다.<br>
+                지난 20세기에 범한 잘못이 전 세계적인 식량 부족을 불러왔고,NASA도 해체되었다.<br> 
+                이때 시공간에 불가사의한 틈이 열리고, 남은 자들에게는 이 곳을 탐험해 인류를 구해야 하는 임무가 지워진다.<br>
+                사랑하는 가족들을 뒤로 한 채 인류라는 더 큰 가족을 위해, 그들은 이제 희망을 찾아 우주로 간다. 그리고 우린 답을 찾을 것이다.<br> 
+                늘 그랬듯이… 
+            </div>
+            <div class="RecommendButtons">
+                <div class="startbutton">
+                    <div class="arrow">
+                        <span class="arrow-icon"></span>
+                    </div>
+                    재생
+                </div>
+                <div class="info" (click)="showinfo()">
+                    <div class="circle">
+                        i
+                    </div>
+                    상세정보
+                </div>
+            </div>
+        </div>
+        <div class="bodyContents">
+            <div class="ContentsBlock" style="margin-top: 0px;" (mouseenter)="ShowArrow()" (mouseleave)="hideArrow()">
+                <div class="ContentsInfo" (mouseenter)="isMenuHovered()" (mouseleave)="isMenuHovered()" (click)="MakeBig()">
+                    넷플릭스 인기 콘텐츠
+                    <div class="hidden" [ngClass]="{'SeeAll':MenuHovered}"> 
+                        <div class="hiddenArrow" [ngClass]="{'MenuArrow':MenuHovered}">></div>
+                        모두 보기 
+                    </div>
+                </div>
+
+                <!-- 영화 줄 1 -->
+
+                <ng-container *ngIf="Arrow">
+                    <div class="SlideArrowLeft"> < </div>
+                </ng-container>
+                <ng-container *ngIf="Arrow">
+                    <div class="SlideArrowRight"> > </div>
+                </ng-container>
+                <div class="videos">
+                    <div *ngFor="let content of contents; let i = index">
+                        <div class="video" (mouseenter)="onHoverImage(i)" (mouseleave)="onHoverImage(i)" [ngClass]="{'video-hovered': content.isHoverEnabled}"
+                            [ngClass]="{'right-hover': content.VideoHoverRight}">
+                            <img [src]="content.imageUrl" alt="" class="videoImg">
+                            <button class="ButtonPlay"></button>
+                            <button class="ButtonOther"></button>
+                            <button class="ButtonOther"></button>
+                            <button class="ButtonOther right" style="margin-left: 23vh;" (click)="showMovie1()"></button>
+                            <div class="text"> {{content.movieDescription}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- top 10 -->
+
+            <div class="ContentsBlock"> 
+                <div class="ContentsInfo"> 
+                    오늘 대한민국의 TOP 10 영화 
+                </div> 
+                <div class="top10"> 
+                    <div *ngFor="let item of top10 let i = index;" (mouseenter)="Top10ImgHover(i)" (mouseleave)="Top10ImgHover(i)">
+                        <div class="Place" > 
+                            <div class="TOP10-Numbers">
+                                {{i+1}}
+                            </div>
+                            <img src={{item.imgURL}} alt="" class="poster">
+                            <div class="hidden2" [ngClass]="{'video-hovered2':item.ShowVid}">
+                                <img [src]="item.imgAfterHover" alt="" class="videoImgAfterHover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 영화 줄 2 -->
+
+            <div class="ContentsBlock">
+                <div class="ContentsInfo">
+                    미국 영화
+                </div>
+                <div class="videos">
+                    <div *ngFor="let content of KoreanMovies; let i = index">
+                        <div class="video" (mouseenter)="HoverImage(i)" (mouseleave)="HoverImage(i)" [ngClass]="{'video-hovered': content.Hovered}"
+                            [ngClass]="{'right-hover': content.Hovered}">
+                            <img [src]="content.imageUrl" alt="" class="videoImg">
+                            <button class="ButtonPlay"></button>
+                            <button class="ButtonOther"></button>
+                            <button class="ButtonOther"></button>
+                            <button class="ButtonOther right" style="margin-left: 23vh;" (click)="showMovie1()"></button>
+                            <div class="text"> {{content.movieDescription}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="footerMemberWrap">
+        <div class="footerMember">
+            <div class="row">
+                <div class="footerMemberSmall"> 화면해설 </div>
+                <div class="footerMemberSmall"> 고객센터 </div>
+                <div class="footerMemberSmall"> 기프트카드 </div>
+                <div class="footerMemberSmall"> 미디어 센터 </div>
+            </div>
+            <div class="row">
+                <div class="footerMemberSmall"> 투자 정보(IR) </div>
+                <div class="footerMemberSmall"> 입사 정보 </div>
+                <div class="footerMemberSmall"> 이용 약관 </div>
+                <div class="footerMemberSmall"> 개인정보 </div>
+            </div>
+            <div class="row">
+                <div class="footerMemberSmall"> 법적 고지 </div>
+                <div class="footerMemberSmall"> 쿠키 설정 </div>
+                <div class="footerMemberSmall"> 회사 정보 </div>
+                <div class="footerMemberSmall"> 문의하기 </div>
+            </div>
+            <button class="ServiceCode">서비스 코드</button>
+            <div>
+                넷플릭스서비시스코리아 유한회사 통신판매업신고번호:제2018-서울종로-0426호 전화번호: 080-001-9587<br>
+                대표: 레지널스 슨 톰프슨<br>
+                이메일 주소: korea@netflix.com<br>
+                주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161<br>
+                사업자 등록번호: 165-87-00119<br>
+                클라우드 호스팅: Amazon Web Services Inc.<br>
+                공정거래위원회 웹사이트 
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+@font-face {
+    font-family: nf-icon;
+    src: url(../../../../Desktop/BebasNeue.otf) format('truetype');
+}
+div{
+    color: white;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.TopBar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 68px;
+    padding-left: 60px;
+    align-items: center;
+    background: linear-gradient(to top, transparent, #141414);
+    z-index: 2;
+    .NoGradiant{
+        background: black;
+    }
+    .nfIcon{
+        display: flex;
+        align-items: center;
+        font-family: 'nf-icon', sans-serif;
+        color: red;
+        font-size: 3vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .Menus{
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        .MenuButtons{
+            @media (max-width:885px) {
+                display: none;
+            }
+            margin-left: 20px;
+            &:hover{
+                color: rgb(179, 178, 178);
+                transition-duration: 0.5s;
+            }
+        }
+        .menuOpen{
+            position: relative;
+            height: 300px;
+            width: 100px;
+            background-color: red;
+            text-align: center;
+            top: 200px;
+            background-color: black;
+            opacity: 0.3;
+        }
+        .MenuSmaller{
+            @media (min-width:885px) {
+                display: none;
+                color: white;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+    
